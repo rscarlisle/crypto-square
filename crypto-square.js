@@ -10,4 +10,6 @@ Crypto.prototype.normalizePlaintext = function () {
     return this.rawString.replace(pattern, '').toLowerCase()
 };
 
+
+
 module.exports = Crypto;
