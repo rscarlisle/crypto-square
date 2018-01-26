@@ -22,7 +22,16 @@ Crypto.prototype.size = function() {
     // Find the square root of the message length, rounding up
     // running test again: test succeeded; expected value was correct  
     const numColumns = Math.ceil(Math.pow(messageLength, 0.5));
+    // numColumns will be consumed in plaintextSegments() function and 
+    // 'size of small square with additional non-nuber chars' passed!
     return numColumns;
     // console.log('Square Root is: ', numColumns);
+};
+
+// run failing test for plaintextSegments() function
+// error msg: "TypeError: crypto.plaintextSegments is not a function"
+// create crypto.plaintextSegments() prototype
+Crypto.prototype.plaintextSegments = function() {
+
 };
 module.exports = Crypto;
