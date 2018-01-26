@@ -16,27 +16,27 @@ describe('Crypto', function () {
     expect(crypto.size()).toEqual(2);
   });
 
-  xit('size of small square with additional non-nuber chars', function () {
+  it('size of small square with additional non-nuber chars', function () {
     var crypto = new Crypto('1 2 3 4');
     expect(crypto.size()).toEqual(2);
   });
 
-  xit('size of slightly larger square', function () {
+  it('size of slightly larger square', function () {
     var crypto = new Crypto('123456789');
     expect(crypto.size()).toEqual(3);
   });
 
-  xit('size of non-perfect square', function () {
+  it('size of non-perfect square', function () {
     var crypto = new Crypto('123456789abc');
     expect(crypto.size()).toEqual(4);
   });
 
-  xit('plain text segments', function () {
+  it('plain text segments', function () {
     var crypto = new Crypto('Never vex thine heart with idle woes');
     expect(crypto.plaintextSegments()).toEqual(['neverv', 'exthin', 'eheart', 'withid', 'lewoes']);
   });
 
-  xit('plain text segments', function () {
+  it('plain text segments', function () {
     var crypto = new Crypto('ZOMG! ZOMBIES!!!');
     expect(crypto.plaintextSegments()).toEqual(['zomg', 'zomb', 'ies']);
   });

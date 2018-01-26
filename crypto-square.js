@@ -10,6 +10,33 @@ Crypto.prototype.normalizePlaintext = function () {
     return this.rawString.replace(pattern, '').toLowerCase()
 };
 
+<<<<<<< HEAD
 
 
+=======
+// create size function for Crypto()
+// ran failing test1: "TypeError: crypto.size is not a function"
+// will now make test pass by writing the 'empty' size function
+
+Crypto.prototype.size = function() {
+    const message = this.normalizePlaintext(this.rawString);
+    const messageLength = message.length;
+
+    // ran failing test2: "Expected undefined to equal 2."
+    // Find the square root of the message length, rounding up
+    // running test again: test succeeded; expected value was correct  
+    const numColumns = Math.ceil(Math.pow(messageLength, 0.5));
+    // numColumns will be consumed in plaintextSegments() function and 
+    // 'size of small square with additional non-nuber chars' passed!
+    return numColumns;
+    // console.log('Square Root is: ', numColumns);
+};
+
+// run failing test for plaintextSegments() function
+// error msg: "TypeError: crypto.plaintextSegments is not a function"
+// create crypto.plaintextSegments() prototype
+Crypto.prototype.plaintextSegments = function() {
+
+};
+>>>>>>> size
 module.exports = Crypto;
