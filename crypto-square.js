@@ -10,10 +10,6 @@ Crypto.prototype.normalizePlaintext = function () {
     return this.rawString.replace(pattern, '').toLowerCase()
 };
 
-<<<<<<< HEAD
-
-
-=======
 // create size function for Crypto()
 // ran failing test1: "TypeError: crypto.size is not a function"
 // will now make test pass by writing the 'empty' size function
