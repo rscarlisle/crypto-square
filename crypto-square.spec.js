@@ -6,12 +6,12 @@ describe('Crypto', function () {
     expect(crypto.normalizePlaintext()).toEqual('splunk');
   });
 
-  xit('normalize numbers', function () {
+  it('normalize numbers', function () {
     var crypto = new Crypto('1, 2, 3 GO!');
     expect(crypto.normalizePlaintext()).toEqual('123go');
   });
 
-  xit('size of small square', function () {
+  it('size of small square', function () {
     var crypto = new Crypto('1234');
     expect(crypto.size()).toEqual(2);
   });
