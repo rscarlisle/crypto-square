@@ -10,10 +10,6 @@ Crypto.prototype.normalizePlaintext = function () {
     return this.rawString.replace(pattern, '').toLowerCase()
 };
 
-<<<<<<< HEAD
-
-
-=======
 // create size function for Crypto()
 // ran failing test1: "TypeError: crypto.size is not a function"
 // will now make test pass by writing the 'empty' size function
@@ -29,14 +25,32 @@ Crypto.prototype.size = function() {
     // numColumns will be consumed in plaintextSegments() function and 
     // 'size of small square with additional non-nuber chars' passed!
     return numColumns;
-    // console.log('Square Root is: ', numColumns);
+    
 };
 
 // run failing test for plaintextSegments() function
 // error msg: "TypeError: crypto.plaintextSegments is not a function"
 // create crypto.plaintextSegments() prototype
+// 2 errors: 
+// Expected undefined to equal [ 'neverv', 'exthin', 'eheart', 'withid', 'lewoes' ].
+// Expected undefined to equal [ 'zomg', 'zomb', 'ies' ]. 
 Crypto.prototype.plaintextSegments = function() {
-
+    const numColumns = this.size();
+    const pattern = new RegExp('.{1,' + numColumns + '}', 'g');
+    const grid = this.normalizePlaintext().match(pattern);
+    // the two errors were fixed by 3 lines of code above
+    // time to create the final function: Crypto.prototype.ciphertext
+    // don't forget to switch branch to cipher-text
+    return grid;
 };
->>>>>>> size
+
+// ran failing test: TypeError: crypto.ciphertext is not a function
+// created: Crypto.prototype.ciphertext; now, test is passing!
+Crypto.prototype.ciphertext = function() {
+// two final failures:
+// "Expected undefined to equal 'tasneyinicdsmiohooelntuillibsuuml'.""
+// "Expected undefined to equal 'wneiaweoreneawssciliprerlneoidktcms'."
+
+
+}
 module.exports = Crypto;
