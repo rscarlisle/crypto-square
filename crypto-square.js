@@ -40,6 +40,7 @@ Crypto.prototype.plaintextSegments = function() {
     const grid = this.normalizePlaintext().match(pattern);
     // the two errors were fixed by 3 lines of code above
     // time to create the final function: Crypto.prototype.ciphertext
+    // don't forget to switch branch to cipher-text
     return grid;
 };
 
